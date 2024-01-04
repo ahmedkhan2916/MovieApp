@@ -27,6 +27,13 @@ body{
     align-items: end;
     flex-direction: column;
 }
+.FlexSpace{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
 
 .Grid{
 
@@ -36,4 +43,16 @@ body{
 
 
 
+
+
+.imagesHead{
+    height: 1.5rem;
+}
+
+.socialMediaApp{
+    /* background-color: red; */
+    width: 12%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
