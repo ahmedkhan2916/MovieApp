@@ -1,8 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
 body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
 }
 
 
@@ -41,9 +43,17 @@ body{
     
 }
 
+.header{
+    background-color: blue;
+    width: 100%;
+}
 
 
+.headTitle h2{
+    font-size: 2rem;
 
+
+}
 
 .imagesHead{
     height: 1.5rem;
@@ -56,3 +66,25 @@ body{
     justify-content: space-evenly;
 }
 
+.search{
+    height: 1.5rem;
+    width: 22.5rem;
+}
+
+@media screen and (max-width:900px)
+
+{
+    .header{
+        flex-direction: column;
+    }
+.socialMediaApp{
+    display:  none;
+}
+    .search{
+        width: 100%;
+    }
+    
+    .inputClass{
+        justify-content: center;
+    }
+}
