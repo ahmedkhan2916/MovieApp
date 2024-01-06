@@ -46,8 +46,17 @@ body{
 .header{
     background-color: blue;
     width: 100%;
+    height: 10vh;
 }
+.searchText{
+    color: rgb(255, 255, 255);
+}
+.searchText h1{
+    font-size: 3.2rem;
+    letter-spacing: 0.5rem;
+    line-height: 0.5;
 
+}
 
 .headTitle h2{
     font-size: 2rem;
@@ -87,4 +96,63 @@ body{
     .inputClass{
         justify-content: center;
     }
+}
+
+
+.searchContainer{
+    height : 20vw ;
+     
+    background-color: red;
+    /* margin-top: -1.4rem; */
+    display: flex;
+    /* align-items: center; */
+    /* background-image: url("./images/car.jpg"); */
+
+    padding: 0rem 3rem;
+    flex-direction: column;
+    background: linear-gradient( rgba(55, 74, 250, 0.7), rgba(0, 0, 0, 0.7) ), url(./images/fast.jpg);
+    /* background-repeat: no-repeat;   */
+    background-position: center;
+}
+
+
+
+
+.searchText h2{
+    line-height: 0.0;
+
+}
+
+.inputClass{
+    width: 70%;
+    height: 2.7rem;
+    border-radius: 30px;
+    border: none;
+}
+
+.inputClass:focus{
+     box-shadow: rgba(10, 3, 235, 0.35) 0px 5px 15px;
+     border:1px solid blue;
+}
+
+.formHello{
+    display: flex;
+    padding-top: 2rem;
+}
+
+.inputBTN{
+    width: 10%;
+    border-radius: 14px;
+    border: 1px solid black;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    margin-left: 0.5rem;
+    color: rgb(0, 0, 0);
+    background-color: rgb(225, 225, 7);
+}
+
+.inputBTN:focus{
+    box-shadow: rgba(10, 3, 235, 0.35) 0px 5px 15px;
+    border:1px solid blue;
 }
