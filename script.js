@@ -1,7 +1,9 @@
 //api key 9a5d374eae9c80f4b3eb140db75ffcff 
 //authentication token eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTVkMzc0ZWFlOWM4MGY0YjNlYjE0MGRiNzVmZmNmZiIsInN1YiI6IjY1OTg0NTBmMWQxYmY0MDIwMjNjODBjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G1VrqvBo8M6JtJLAag_J5c4vy9oHp4n-QWZOn_bR0WQ'
 
-
+window.onload = (event) => {
+  pullData();
+};
 //keyword Search Result Function
 function matchString(val,title)
 {
@@ -46,18 +48,24 @@ function Trending(response)
 {
 
   console.log(response);
+
+  let i=0;
+  while(i<20)
+  {
+
   let target=document.getElementById("trending");
   let cards=document.createElement("div");
   let img=document.createElement("img");
   cards.className="cardsDiv";
   img.className="cardsImage";
 
-  img.src=`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[0].poster_path}`;
+  img.src=`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`;
 
   cards.appendChild(img);
 
   target.appendChild(cards);
-
+  i++;
+  }
 
 }
 
@@ -91,7 +99,7 @@ function pullData(event)
     }
   };
   
-  fetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', options)
+  fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
     .then(response => response.json())
     .then(response => Trending(response))
     .catch(err => console.error(err));
@@ -124,4 +132,3 @@ function pullData(event)
 
 //     }
 
-    

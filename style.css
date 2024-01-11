@@ -164,3 +164,34 @@ body{
     padding: 5rem;
 
 }
+.cardsDiv{
+    height: 13rem;
+    width: 9rem;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: red;
+    background-position: center;
+    
+}
+.cardsImage{
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+   
+
+
+}
+
+.scrollTrend{
+    width: 98%;
+    overflow-x: scroll;
+}
+
+
+.trendingCards{
+    display: flex;
+    justify-content: space-evenly;
+    width: 210rem;
+}
+
