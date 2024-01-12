@@ -4,6 +4,19 @@
 window.onload = (event) => {
   pullData();
 };
+
+let ImageArr={
+
+  src1:"./images/aqua.jpg",
+
+
+
+};
+
+
+
+
+
 //keyword Search Result Function
 function matchString(val,title)
 {
@@ -66,6 +79,24 @@ function Trending(response)
   target.appendChild(cards);
   i++;
   }
+
+
+
+  // let trailer=document.getElementById("Trailer");
+  // let card=document.createElement("div");
+  // let img=document.createElement("img");
+  
+  // card.class="trailerCard";
+  // img.class="TrailercardImage";
+
+  // img.src=ImageArr.src1;
+  // card.appendChild(img);
+  // trailer.appendChild(card);
+
+
+
+
+ 
 
 }
 
