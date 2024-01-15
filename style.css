@@ -198,9 +198,7 @@ line-height: 1 !important;
 
 }
 
-.trendingContainer{
-  
-}
+
 .scrollTrend{
     width: 98%;
     overflow-x: scroll;
@@ -218,5 +216,80 @@ line-height: 1 !important;
 
 .trailerCard{
     height: 15rem;
+    background-color: blue;
 }
+
+.TrailerCls{
+    background-color: red;
+    height: 14rem;
+    display: flex;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./images/img2.jpg);
+    background-color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17rem;
+       /* background: linear-gradient(  #d7d7d7, rgba(0, 0, 0, 0.7) ), url(./images/pexels-aistė-sveikataitė-1535421.jpg); */
+    
+}
+
+/* @keyframes square-in-center {
+    from {
+      clip-path: inset(100% 100% 100% 100%);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  [transition-style="in:square:center"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-center both;
+  } */
+
+  .imageContainer{
+    height: 12rem;
+    width: 22rem;
+    transform: scale(0.9);
+    transition: all .2s ease-in-out;
+  }
+
+  .imageContainer:hover{
+ 
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    transform: scale(1);
+
+
+  }
+
+  .childCont{
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
+    transition: all .2s ease-in-out;
+  }
+
+
+
+  .playButton{
+    height: 25%;
+    width: 15%;
+    filter: invert(1);
+    /* transform: scale(0.5); */
+
+  }
+
+  .childCont:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1);
+  }
 
