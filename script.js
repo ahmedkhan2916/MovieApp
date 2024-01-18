@@ -14,7 +14,21 @@ let ImageArr={
 
   src3:"./images/img3.jpg",
 
+  src4:"./images/img4.jpg",
 
+  src5:"./images/img5.jpg",
+
+  src6:"./images/img6.jpg",
+
+  src7:"./images/img7.jpg",
+
+  src8:"./images/img8.jpg",
+
+  src9:"./images/img9.jpg",
+
+  src11:"./images/img11.jpg",
+
+  src12:"./images/img12.jpg",
 
 };
 
@@ -60,6 +74,11 @@ let i=1;
 let Element1 = document.getElementById("A1");
 let Element2 = document.getElementById("A2");
 let Element3 = document.getElementById("A3");
+
+
+
+
+
   Element1.addEventListener(
     "mouseover",
     (event) => {
@@ -101,54 +120,54 @@ let Element3 = document.getElementById("A3");
     },
   
   );
+  
 
 
 }
 
 //keyword Search Result Function
-function matchString(val,title)
-{
+// function matchString(val,title)
+// {
 
-        // let stringResult=title.replace(/\s+/g, '');
+//         // let stringResult=title.replace(/\s+/g, '');
 
-        if(title.startsWith(val))
-        {
-          console.log("yes");
-          return true;
-        }
-        else{
-          return false;
-        }
-}
+//         if(title.startsWith(val))
+//         {
+//           console.log("yes");
+//           return true;
+//         }
+//         else{
+//           return false;
+//         }
+// }
 
-function showData(response)
-{
-   let value1=document.getElementById("inputData").value;
+// function showData(response)
+// {
+//    let value1=document.getElementById("inputData").value;
 
-   let i=0;
- while(i!=response.results.length)
- {
-   if(matchString(value1,response.results[i].title))
-   {
-    console.log(response.results[i]);
+//    let i=0;
+//  while(i!=response.results.length)
+//  {
+//    if(matchString(value1,response.results[i].title))
+//    {
+//     console.log(response.results[i]);
 
-    let newDiv = document.createElement("img");
+//     let newDiv = document.createElement("img");
 
-         newDiv.src =
- `https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`;
-         document.getElementById('demo').appendChild(newDiv);
+//          newDiv.src =
+//  `https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`;
+//          document.getElementById('demo').appendChild(newDiv);
 
-   }
+//    }
 
-  i++;
+//   i++;
 
-  }
-}
+//   }
+// }
 
+//Trending section here:
 function Trending(response)
 {
-
-  console.log(response);
 
   let i=0;
   while(i<20)
@@ -167,49 +186,67 @@ function Trending(response)
   target.appendChild(cards);
   i++;
   }
+}
 
 
+//tv serials section
+function tvSerials(response)
+{
 
-  // let trailer=document.getElementById("Trailer");
-  // let card=document.createElement("div");
-  // let img=document.createElement("img");
-  
-  // card.class="trailerCard";
-  // img.class="TrailercardImage";
+  console.log(response);
 
-  // img.src=ImageArr.src1;
-  // card.appendChild(img);
-  // trailer.appendChild(card);
+  let i=0;
+  while(i<20)
+  {
 
+  let target=document.getElementById("tvSerial");
+  let cards=document.createElement("div");
+  let img=document.createElement("img");
+  cards.className="cardsDiv";
+  img.className="cardsImage";
 
+  img.src=`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`;
 
+  cards.appendChild(img);
 
- 
+  target.appendChild(cards);
+  i++;
+  }
 
 }
 
 
+//Upcoming movies section
+  function Upcoming(response)
+{
 
+  let i=0;
+  while(i<20)
+  {
+
+  let target=document.getElementById("Upcoming");
+  let cards=document.createElement("div");
+  let img=document.createElement("img");
+  cards.className="cardsDiv";
+  img.className="cardsImage";
+
+  img.src=`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`;
+
+  cards.appendChild(img);
+
+  target.appendChild(cards);
+  i++;
+  }
+
+}
+
+
+//fetch function fetching all the ott data here using api:
 
 function pullDataTrending(event)
 {
 
-  // const options = {
-  //   method: 'GET',
-  //   headers: {
-  //     accept: 'application/json',
-  //     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTVkMzc0ZWFlOWM4MGY0YjNlYjE0MGRiNzVmZmNmZiIsInN1YiI6IjY1OTg0NTBmMWQxYmY0MDIwMjNjODBjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G1VrqvBo8M6JtJLAag_J5c4vy9oHp4n-QWZOn_bR0WQ'
-  //   }
-  // };
-  
-  // fetch('https://api.themoviedb.org/3/movie/popular', options)
-  //   .then(response => response.json())
-  //   .then(response => showData(response))
-  //   .catch(err => console.error(err));
- 
-  //   event.preventDefault();
-
-
+  //first list
   const options = {
     method: 'GET',
     headers: {
@@ -223,31 +260,34 @@ function pullDataTrending(event)
     .then(response => Trending(response))
     .catch(err => console.error(err));
 
-}
 
+    // second list
+    const options2 = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTVkMzc0ZWFlOWM4MGY0YjNlYjE0MGRiNzVmZmNmZiIsInN1YiI6IjY1OTg0NTBmMWQxYmY0MDIwMjNjODBjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G1VrqvBo8M6JtJLAag_J5c4vy9oHp4n-QWZOn_bR0WQ'
+      }
+    };
+    
+    fetch('https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc', options)
+      .then(response => response.json())
+      .then(response => tvSerials(response))
+      .catch(err => console.error(err));
 
-
-  
-
-
-
-
-
-
-
-
-//     function resultStore(response)
-//     {
-
-//         console.log(response.results[0].title);
-
-//         pullData(response);
-       
-//         let img = document.createElement('img');
-//         img.src =
-// `https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[0].poster_path}`;
-//         document.getElementById('demo').appendChild(img);
+      //third list
+      const options3 = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTVkMzc0ZWFlOWM4MGY0YjNlYjE0MGRiNzVmZmNmZiIsInN1YiI6IjY1OTg0NTBmMWQxYmY0MDIwMjNjODBjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G1VrqvBo8M6JtJLAag_J5c4vy9oHp4n-QWZOn_bR0WQ'
+        }
+      };
       
+      fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
+        .then(response => response.json())
+        .then(response => Upcoming(response))
+        .catch(err => console.error(err));
 
-//     }
 
+  }

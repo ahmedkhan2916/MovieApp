@@ -5,6 +5,9 @@ body{
     box-sizing: border-box;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
+    
+  
+    
 }
 
 
@@ -125,9 +128,10 @@ line-height: 1 !important;
 
     padding: 0rem 3rem;
     flex-direction: column;
-    background: linear-gradient(  #1a1a1a, rgba(0, 0, 0, 0.7) ), url(./images/fast.jpg);
-    /* background-repeat: no-repeat;   */
+    background: linear-gradient(  #1a1a1a, rgba(0, 0, 0, 0.7) ), url(./images/mi.jpg);
+    
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 
@@ -186,7 +190,12 @@ line-height: 1 !important;
     border-radius: 10px;
     background-color: red;
     background-position: center;
+
     
+}
+
+.cardsDiv:hover{
+    cursor: pointer;
 }
 .cardsImage{
 
@@ -200,7 +209,7 @@ line-height: 1 !important;
 
 
 .scrollTrend{
-    width: 98%;
+    width: 100%;
     overflow-x: scroll;
     background: linear-gradient(  #d7d7d7, rgba(0, 0, 0, 0.7) ), url(./images/pexels-aistė-sveikataitė-1535421.jpg);
     background-position: center;
@@ -231,9 +240,11 @@ line-height: 1 !important;
     background-image: url(./images/img2.jpg);
     background-color: grey;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 17rem;
+    width: 200rem;
+
        /* background: linear-gradient(  #d7d7d7, rgba(0, 0, 0, 0.7) ), url(./images/pexels-aistė-sveikataitė-1535421.jpg); */
     
 }
@@ -281,15 +292,20 @@ line-height: 1 !important;
 
 
   .playButton{
-    height: 25%;
-    width: 15%;
+    height: 30%;
+    width: 25%;
     filter: invert(1);
     /* transform: scale(0.5); */
-
   }
 
   .childCont:hover{
     transition: all .2s ease-in-out;
     transform: scale(1);
   }
+
+  .trendHead{
+    padding: 1.1rem;
+  }
+
+  
 
