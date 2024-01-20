@@ -126,7 +126,7 @@ let Element3 = document.getElementById("A3");
 }
 
 //keyword Search Result Function
-// function matchString(val,title)
+// function matchString(val,title)  
 // {
 
 //         // let stringResult=title.replace(/\s+/g, '');
@@ -193,7 +193,7 @@ function Trending(response)
 function tvSerials(response)
 {
 
-  console.log(response);
+  // console.log(response);
 
   let i=0;
   while(i<20)
@@ -236,6 +236,103 @@ function tvSerials(response)
 
   target.appendChild(cards);
   i++;
+  }
+
+}
+
+//adding event here for search movies
+
+document.getElementById("searchMovie").addEventListener("click",(e)=>{
+  e.preventDefault()
+  searchMovie(e);
+
+
+});
+
+function searchMovie(e)
+{
+  
+  let values=document.getElementById("inputData");  
+
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YTVkMzc0ZWFlOWM4MGY0YjNlYjE0MGRiNzVmZmNmZiIsInN1YiI6IjY1OTg0NTBmMWQxYmY0MDIwMjNjODBjYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G1VrqvBo8M6JtJLAag_J5c4vy9oHp4n-QWZOn_bR0WQ'
+    }
+  };
+  
+  fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+    .then(response => response.json())
+    .then(response => searching(response,values))
+    .catch(err => console.error(err));
+
+
+
+}
+
+
+
+//underConstruction
+function searching(response,values)
+{
+
+
+      let query=values.value;
+    // let api=response.results[i].title;
+    // let ans=`/${api}/`;
+
+   let ans=query.charAt(0).toUpperCase();
+    // query.toUpperCase();
+   
+  for(let i=1;i<query.length;i++)
+  {
+
+    ans+=query[i];
+
+
+  }
+
+  console.log(ans);
+
+
+  
+  for(let i=0;i<20;i++)
+  {
+   
+    let api=response.results[i].title;
+    // let ans=`/${api}/`;
+   
+    
+
+    if(ans.startsWith(api))
+    {
+    console.log(response.results)
+      let Block=document.getElementById("searchResults");
+      Block.style.display="block";
+
+      console.log(response.results[i]);
+      let newDiv = document.createElement("div");
+      let Heading = document.createElement("div");
+      let h1=document.createElement("h1");
+      let newtext=document.createTextNode("Search Result...!");
+      h1.appendChild(newtext);
+      Heading.className="heading";
+      Heading.appendChild(h1);
+      document.getElementById("searchResults").appendChild(Heading);
+
+      
+
+      newDiv.className="ResultDiv";
+      newDiv.style.backgroundImage=`url(${`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`})`; 
+
+      document.getElementById("searchResults").appendChild(newDiv);
+
+     
+return
+
+    }
+    
   }
 
 }

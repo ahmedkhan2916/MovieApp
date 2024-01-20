@@ -355,3 +355,58 @@ line-height: 1 !important;
     display: flex;
     height: 28vh;
   }
+
+
+
+  @media screen and (max-width:780px)
+
+{
+.right{
+  display: block;
+}
+}
+
+@media screen and (max-width:480px)
+
+{
+.searchContainer{
+  justify-content: center;
+}
+
+
+.left{
+  display: block;
+}
+
+.FooterContainer{
+  height: 60vh;
+}
+
+
+
+
+}
+
+
+
+ 
+  .searchResult{
+
+    height: 80vh;
+    width: 100%;
+    display: none;
+    padding:2rem;
+    
+  }
+
+  .heading{
+
+   width: 100vw;
+  }
+  .ResultDiv{
+    background-repeat: no-repeat;
+    height: 85%;
+    width: 20%;
+    background-position: center;
+    background-size: cover;
+  }
