@@ -198,25 +198,17 @@ line-height: 1 !important;
     cursor: pointer;
 }
 .cardsImage{
-
     height: 100%;
     width: 100%;
     object-fit: cover;
-   
-
-
 }
-
 
 .scrollTrend{
     width: 100%;
     overflow-x: scroll;
     background: linear-gradient(  #d7d7d7, rgba(0, 0, 0, 0.7) ), url(./images/pexels-aistė-sveikataitė-1535421.jpg);
     background-position: center;
-
 }
-
-
 .trendingCards{
     display: flex;
     justify-content: space-evenly;
@@ -364,6 +356,13 @@ line-height: 1 !important;
 .right{
   display: block;
 }
+
+.searchResult
+{
+  width: 100%;
+  overflow-x: scroll;
+}
+
 }
 
 @media screen and (max-width:480px)
@@ -386,16 +385,14 @@ line-height: 1 !important;
 
 
 }
-
-
-
  
-  .searchResult{
+.searchResult{
 
     height: 80vh;
-    width: 100%;
+    width: 95%;
     display: none;
     padding:2rem;
+    justify-content: space-evenly;
     
   }
 
@@ -404,9 +401,49 @@ line-height: 1 !important;
    width: 100vw;
   }
   .ResultDiv{
-    background-repeat: no-repeat;
-    height: 85%;
-    width: 20%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat;
   }
+
+
+  .searchChildScroll{
+    width: 100% !important;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .resultGenerate{
+
+    height: 100%;
+    width: 100vw;
+justify-content: space-evenly;
+    display: flex;
+
+
+  }
+
+  @media screen and (max-width:630px)
+
+{
+
+
+  .searchResult{
+    width: 80%;
+  }
+
+  .resultGenerate{
+
+    height: 100%;
+    width: 240vw;
+
+
+
+  }
+
+
+
+}

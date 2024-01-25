@@ -280,56 +280,60 @@ function searching(response,values)
 
       let query=values.value;
     // let api=response.results[i].title;
-    // let ans=`/${api}/`;
 
-   let ans=query.charAt(0).toUpperCase();
-    // query.toUpperCase();
-   
-  for(let i=1;i<query.length;i++)
-  {
-
-    ans+=query[i];
-
-
-  }
-
-  console.log(ans);
-
-
-  
-  for(let i=0;i<20;i++)
-  {
-   
-    let api=response.results[i].title;
-    // let ans=`/${api}/`;
-   
+   let ans=query.toLowerCase();
+   let store1=ans;
     
 
-    if(ans.startsWith(api))
+   
+    
+  // for(let i=1;i<query.length;i++)
+  // {
+
+  //   store1+=query[i];
+  //   console.log(store1);
+
+
+  // }
+  // let joins=store1.split(" ").join("");
+ 
+
+  console.log(store1);
+
+  for(let i=0;i<20;i++)
+  {
+    let api=response.results[i].title;
+    // let joins2=api.split(" ").join("");
+    let small=api.toLowerCase();
+
+    // let ans=`/${api}/`;
+
+    console.log(small)
+    // console.log(store1)
+    let ans=small.startsWith(store1);
+    console.log(ans);
+    
+    if(ans)
     {
-    console.log(response.results)
       let Block=document.getElementById("searchResults");
-      Block.style.display="block";
+      let none=document.getElementsByClassName("hide");
+      Block.style.display="flex";
+      // none.style.display="none";
+
+      console.log(ans);
 
       console.log(response.results[i]);
       let newDiv = document.createElement("div");
-      let Heading = document.createElement("div");
+     
       let h1=document.createElement("h1");
-      let newtext=document.createTextNode("Search Result...!");
-      h1.appendChild(newtext);
-      Heading.className="heading";
-      Heading.appendChild(h1);
-      document.getElementById("searchResults").appendChild(Heading);
-
-      
-
+      // let newtext=document.createTextNode("Search Result...!");
+      // h1.appendChild(newtext);
+      // Heading.className="heading";
+      // Heading.appendChild(h1);
+      // document.getElementById("searchResults").appendChild(Heading);
       newDiv.className="ResultDiv";
       newDiv.style.backgroundImage=`url(${`https://www.themoviedb.org/t/p/w220_and_h330_face${response.results[i].poster_path}`})`; 
-
-      document.getElementById("searchResults").appendChild(newDiv);
-
-     
-return
+      document.getElementById("generateResult").appendChild(newDiv);
 
     }
     
